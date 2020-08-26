@@ -1,0 +1,21 @@
+.users-container{
+    display: flex;
+    
+}
+
+.users-list{
+    width:70%;
+    padding:20px;
+    margin:20px;
+    border-right: 1px solid gray;
+}
+
+.users-count{
+    background:lightgrey;
+    position: fixed;
+    right: 100px;
+    width: 300px;
+}
+
+
+
