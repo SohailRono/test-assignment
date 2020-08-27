@@ -5,7 +5,7 @@ import './Users.css'
 
 const Users = (props) => {
     const { name, phone, email,img,salary} = props.user;
-    console.log(props.user);
+    console.log(props);
     return (
         <div className="user">
              <div>
@@ -16,7 +16,7 @@ const Users = (props) => {
                 <h4>Phone: {phone}</h4>
                 <h4>Email: {email}</h4>
                 <h4>Salary: {salary}</h4>
-                <button onClick={() => props.handleAddUser(props.handleAddUser)}><FontAwesomeIcon icon={faPlus} /> Add Friend</button>
+                <button onClick={() => props.handleAddUser(props.user)}><FontAwesomeIcon icon={faPlus} /> Add Friend</button>
             </div>
         </div>
     );

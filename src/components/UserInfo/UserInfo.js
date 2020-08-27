@@ -3,23 +3,30 @@ import fakeData from '../../fakeData';
 import { useState } from 'react';
 import './UserInfo.css';
 import Users from './Users';
+import Counter from '../Counter/Counter';
 
 const UserInfo = () => {
     const [users, setUsers] = useState(fakeData);
+    const [counter,setcounter] = useState([]);
 
     const handleAddUser = (user) => {
-        console.log('Added',user);
+        const newcounter = [...counter,user];
+        setcounter(newcounter);
+        // console.log('Added',user);
     }
 
     return (
         <div className="users-container">
             <div className="users-list">
                 {
-                    users.map(user => <Users handleAddUser={handleAddUser} user={user} ></Users>)
+                    users.map(user => <Users 
+                        handleAddUser={handleAddUser} 
+                        user={user} >
+                        </Users>)
                 }
             </div>
             <div className="users-count">
-                <h4>Details Information</h4>
+                <Counter counter={counter}></Counter>
             </div>
         </div>
     );
